@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to run on a local computer to start a code-server on Euler and connect it with a local browser to it
+# Script to start, from a local computer, a code-server on Euler and connect it with a local browser
 # Joao Sousa, December 2021 @ETH Zurich
 # Adapted from Samuel Fux and Andreas Lugmayr (https://gitlab.ethz.ch/sfux/VSCode_remote_HPC)
 
