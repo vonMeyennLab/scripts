@@ -248,7 +248,7 @@ else
 fi
 
 # set modules
-VSC_MODULE_COMMAND="gcc/6.3.0 code-server/3.12.0 eth_proxy r/4.0.2 python/3.8.5 julia tmux radian"
+VSC_MODULE_COMMAND="gcc/6.3.0 code-server/3.12.0 eth_proxy r/4.0.2 python/3.8.5 julia radian"
 
 # check if VSC_SSH_KEY_PATH is empty or contains a valid path
 if [ -z "$VSC_SSH_KEY_PATH" ]; then
@@ -297,8 +297,6 @@ module load $VSC_MODULE_COMMAND
 export XDG_RUNTIME_DIR="\$HOME/vsc_runtime"
 VSC_IP_REMOTE="\$(hostname -i)"
 echo "Remote IP:\$VSC_IP_REMOTE" >> /cluster/home/$VSC_USERNAME/vscip
-#SESSION="code-server`pwd | md5 | cut -b -3`"
-#tmux attach-session -d -t $SESSION || tmux new-session -s $SESSION
 code-server --extensions-dir=/cluster/work/nme/software/libraries/code-server/3.12.0 --verbose --proxy-domain=http://proxy.ethz.ch:3128 --bind-addr="\${VSC_IP_REMOTE}:8899"
 ENDBSUB
 
