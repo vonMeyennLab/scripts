@@ -76,11 +76,11 @@ Optional arguments:
 
 Examples:
 
-        ./start_vscode.sh -u sfux -n 4 -W 04:00 -m 2048
+        start_vscode.sh -u sfux -n 4 -W 04:00 -m 2048
 
-        ./start_vscode.sh --username sfux --numcores 2 --runtime 01:30 --memory 2048
+        start_vscode.sh --username sfux --numcores 2 --runtime 01:30 --memory 2048
 
-        ./start_vscode.sh -c $HOME/.vsc_config
+        start_vscode.sh -c $HOME/.vsc_config
 
 Format of configuration file:
 
@@ -248,7 +248,7 @@ else
 fi
 
 # set modules
-VSC_MODULE_COMMAND="gcc/6.3.0 code-server/3.12.0 eth_proxy r/4.0.2 python/3.8.5 julia radian"
+VSC_MODULE_COMMAND="gcc/6.3.0 code-server/3.12.0 eth_proxy r/4.1.3 python/3.8.5 julia radian"
 
 # check if VSC_SSH_KEY_PATH is empty or contains a valid path
 if [ -z "$VSC_SSH_KEY_PATH" ]; then
