@@ -291,7 +291,7 @@ ENDSSH
 # run the code-server job on Euler and save the ip of the compute node in the file vscip in the home directory of the user on Euler
 echo -e "Connecting to $VSC_HOSTNAME to start the code-server in a batch job"
 # FIXME: save jobid in a variable, that the script can kill the batch job at the end
-ssh $VSC_SSH_OPT bsub -n $VSC_NUM_CPU -W $VSC_RUN_TIME -R "rusage[mem=$VSC_MEM_PER_CPU_CORE]" $VSC_SNUM_GPU  <<ENDBSUB
+ssh -Y $VSC_SSH_OPT bsub -n $VSC_NUM_CPU -W $VSC_RUN_TIME -R "rusage[mem=$VSC_MEM_PER_CPU_CORE]" $VSC_SNUM_GPU  <<ENDBSUB
 if [ -f /cluster/work/nme/software/config/nme_startup.sh ]; then . /cluster/work/nme/software/config/nme_startup.sh; fi
 module load $VSC_MODULE_COMMAND
 export XDG_RUNTIME_DIR="\$HOME/vsc_runtime"
