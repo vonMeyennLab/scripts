@@ -297,7 +297,7 @@ module load $VSC_MODULE_COMMAND
 export XDG_RUNTIME_DIR="\$HOME/vsc_runtime"
 VSC_IP_REMOTE="\$(hostname -i)"
 echo "Remote IP:\$VSC_IP_REMOTE" >> /cluster/home/$VSC_USERNAME/vscip
-code-server --password 3e0cba5db617d2ad7c34366a --auth none --extensions-dir=/cluster/work/nme/software/libraries/code-server/3.12.0 --verbose --proxy-domain=http://proxy.ethz.ch:3128 --bind-addr="\${VSC_IP_REMOTE}:8899"
+code-server --extensions-dir=/cluster/work/nme/software/libraries/code-server/3.12.0 --verbose --proxy-domain=http://proxy.ethz.ch:3128 --bind-addr="\${VSC_IP_REMOTE}:8899"
 ENDBSUB
 
 # wait until batch job has started, poll every $VSC_WAITING_INTERVAL seconds to check if /cluster/home/$VSC_USERNAME/vscip exists
