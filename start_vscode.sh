@@ -297,7 +297,7 @@ module load $VSC_MODULE_COMMAND
 export XDG_RUNTIME_DIR="\$HOME/vsc_runtime"
 VSC_IP_REMOTE="\$(hostname -i)"
 echo "Remote IP:\$VSC_IP_REMOTE" >> /cluster/home/$VSC_USERNAME/vscip
-code-server --extensions-dir=/cluster/work/nme/software/libraries/code-server/3.12.0 --verbose --proxy-domain=http://proxy.ethz.ch:3128 --bind-addr="\${VSC_IP_REMOTE}:8899"
+code-server --extensions-dir=/cluster/work/nme/software/libraries/code-server/3.12.0 --verbose --proxy-domain=http://proxy.ethz.ch:3128 --bind-addr="\${VSC_IP_REMOTE}:8999"
 ENDBSUB
 
 # wait until batch job has started, poll every $VSC_WAITING_INTERVAL seconds to check if /cluster/home/$VSC_USERNAME/vscip exists
@@ -315,7 +315,7 @@ sleep 7
 # get remote ip, port and token from files stored on Euler
 echo -e "Receiving ip, port and token from the code-server"
 VSC_REMOTE_IP=$(ssh $VSC_SSH_OPT "cat /cluster/home/$VSC_USERNAME/vscip | grep -m1 'Remote IP' | cut -d ':' -f 2")
-VSC_REMOTE_PORT=8899
+VSC_REMOTE_PORT=8999
 
 # check if the IP, the port and the token are defined
 if  [[ "$VSC_REMOTE_IP" == "" ]]; then
